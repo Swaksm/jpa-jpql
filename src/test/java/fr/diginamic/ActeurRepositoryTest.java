@@ -44,7 +44,7 @@ public class ActeurRepositoryTest {
 	 */
 	@Test
 	public void testExtraireActeursParIdentite() {
-		TypedQuery<Acteur> query = em.createQuery("SELECT a FROM Acteur WHERE a.identite = 'Marion Cotillard'", Acteur.class);
+		TypedQuery<Acteur> query = em.createQuery("SELECT a FROM Acteur a WHERE a.identite = 'Marion Cotillard'", Acteur.class);
 		List<Acteur> acteurs = query.getResultList();
 
 		assertEquals(1, acteurs.size());
